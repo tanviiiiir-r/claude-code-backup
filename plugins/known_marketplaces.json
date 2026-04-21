@@ -1,0 +1,18 @@
+{
+  "claude-plugins-official": {
+    "source": {
+      "source": "github",
+      "repo": "anthropics/claude-plugins-official"
+    },
+    "installLocation": "/Users/tanvir/.claude/plugins/marketplaces/claude-plugins-official",
+    "lastUpdated": "2026-04-21T14:43:09.501Z"
+  },
+  "railway-skills": {
+    "source": {
+      "source": "github",
+      "repo": "railwayapp/railway-skills"
+    },
+    "installLocation": "/Users/tanvir/.claude/plugins/marketplaces/railway-skills",
+    "lastUpdated": "2026-04-20T23:52:24.052Z"
+  }
+}

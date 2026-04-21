@@ -1,0 +1,74 @@
+{
+  "permissions": {
+    "bash": "ask",
+    "edit": "ask",
+    "write": "ask"
+  },
+  "enabledPlugins": {
+    "code-review@claude-plugins-official": true,
+    "railway@claude-plugins-official": true,
+    "vercel@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "railway-skills": {
+      "source": {
+        "source": "github",
+        "repo": "railwayapp/railway-skills"
+      }
+    }
+  },
+  "plugins": {
+    "agent-sdk-dev": {
+      "enabled": true,
+      "path": "/Users/tanvir/.claude/plugins/agent-sdk-dev"
+    },
+    "claude-opus-4-5-migration": {
+      "enabled": true,
+      "path": "/Users/tanvir/.claude/plugins/claude-opus-4-5-migration"
+    },
+    "code-review": {
+      "enabled": true,
+      "path": "/Users/tanvir/.claude/plugins/code-review"
+    },
+    "commit-commands": {
+      "enabled": true,
+      "path": "/Users/tanvir/.claude/plugins/commit-commands"
+    },
+    "explanatory-output-style": {
+      "enabled": true,
+      "path": "/Users/tanvir/.claude/plugins/explanatory-output-style"
+    },
+    "feature-dev": {
+      "enabled": true,
+      "path": "/Users/tanvir/.claude/plugins/feature-dev"
+    },
+    "frontend-design": {
+      "enabled": true,
+      "path": "/Users/tanvir/.claude/plugins/frontend-design"
+    },
+    "hookify": {
+      "enabled": true,
+      "path": "/Users/tanvir/.claude/plugins/hookify"
+    },
+    "learning-output-style": {
+      "enabled": true,
+      "path": "/Users/tanvir/.claude/plugins/learning-output-style"
+    },
+    "plugin-dev": {
+      "enabled": true,
+      "path": "/Users/tanvir/.claude/plugins/plugin-dev"
+    },
+    "pr-review-toolkit": {
+      "enabled": true,
+      "path": "/Users/tanvir/.claude/plugins/pr-review-toolkit"
+    },
+    "ralph-wiggum": {
+      "enabled": true,
+      "path": "/Users/tanvir/.claude/plugins/ralph-wiggum"
+    },
+    "security-guidance": {
+      "enabled": true,
+      "path": "/Users/tanvir/.claude/plugins/security-guidance"
+    }
+  }
+}

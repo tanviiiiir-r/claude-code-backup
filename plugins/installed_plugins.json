@@ -1,0 +1,44 @@
+{
+  "version": 2,
+  "plugins": {
+    "code-review@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tanvir/.claude/plugins/cache/claude-plugins-official/code-review/5c7fa1cef40b",
+        "version": "5c7fa1cef40b",
+        "installedAt": "2026-04-16T20:58:46.022Z",
+        "lastUpdated": "2026-04-16T20:58:46.022Z",
+        "gitCommitSha": "5c7fa1cef40bf6ed2f533e21f49e45eda9e8b556"
+      },
+      {
+        "scope": "project",
+        "projectPath": "/Users/tanvir",
+        "installPath": "/Users/tanvir/.claude/plugins/cache/claude-plugins-official/code-review/5c7fa1cef40b",
+        "version": "5c7fa1cef40b",
+        "installedAt": "2026-04-16T21:00:01.426Z",
+        "lastUpdated": "2026-04-16T21:00:01.426Z",
+        "gitCommitSha": "5c7fa1cef40bf6ed2f533e21f49e45eda9e8b556"
+      }
+    ],
+    "railway@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tanvir/.claude/plugins/cache/claude-plugins-official/railway/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-04-20T23:53:15.273Z",
+        "lastUpdated": "2026-04-20T23:53:15.273Z",
+        "gitCommitSha": "d52f3741a6a33a3191d6138eb3d6c3355cb970d1"
+      }
+    ],
+    "vercel@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/tanvir/.claude/plugins/cache/claude-plugins-official/vercel/0.40.0",
+        "version": "0.40.0",
+        "installedAt": "2026-04-21T00:29:16.097Z",
+        "lastUpdated": "2026-04-21T00:29:16.097Z",
+        "gitCommitSha": "8db97f0ce51120ac056a4e557f627a9428db4d74"
+      }
+    ]
+  }
+}

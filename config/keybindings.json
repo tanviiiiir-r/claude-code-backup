@@ -1,0 +1,7 @@
+{
+  "bindings": [
+    { "key": "Ctrl+Space", "command": "autocomplete" },
+    { "key": "Ctrl+Enter", "command": "runCommand" },
+    { "key": "Ctrl+Shift+P", "command": "openClaude" }
+  ]
+}
