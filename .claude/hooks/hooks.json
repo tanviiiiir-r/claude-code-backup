@@ -1,7 +1,1 @@
-{
-  "hooks": {
-    "PreToolUse": [],
-    "PostToolUse": [],
-    "PrePromptSend": []
-  }
-}
+{"hooks": {"PrePromptSend": [], "PostToolUse": [], "PreToolUse": []}}

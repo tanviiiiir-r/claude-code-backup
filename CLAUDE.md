@@ -1,72 +1,84 @@
-# Claude Code Configuration
+# CLAUDE.md
 
-This repository contains a complete Claude Code configuration backup following best practices.
+**Claude Dev Team Bible** - One-person production team setup.
 
-## Structure
+## Quick Start
 
-```
-.claude/
-├── agents/          # Autonomous actor definitions
-├── commands/        # Slash command entry points  
-├── skills/          # Reusable capability modules
-├── hooks/           # Event-driven automation
-├── rules/           # Session rules and guidelines
-└── settings.json    # Configuration
-```
+```bash
+# Copy to project
+cp -r .claude /path/to/project/
 
-## Key Features
-
-- **Agent-based workflows** - Spawn parallel agents for complex tasks
-- **Skill system** - Reusable domain knowledge modules
-- **Event hooks** - Automate based on tool usage patterns
-- **Persistent memory** - Agents learn across sessions
-- **Hierarchical settings** - Project + user + global config layers
-
-## Usage
-
-### Commands
-- `/help` - Show available commands
-- `/memory` - Load relevant memory
-- `/review` - Trigger code review workflow
-
-### Agents
-Spawn specialized agents for specific tasks:
-
-```python
-Agent(
-  subagent_type="code-reviewer",
-  description="Review PR for bugs",
-  prompt="Review the changes in PR #123..."
-)
+# Install tools (one-time)
+pip install bandit safety pip-audit
+git secrets --install
 ```
 
-### Skills
-Invoke reusable capabilities:
+## Workflow
 
-```python
-Skill(skill="refactor-python", args="{\"file\": \"src/main.py\"}")
+**Daily:**
+1. Code
+2. `/security-scan` - block if secrets
+3. `/test --coverage` - need 80%
+4. Commit
+
+**Deploy:**
+1. `/security-scan --full`
+2. `/test --all`
+3. `/deploy staging`
+4. `/deploy production --strategy=canary`
+
+## Commands
+
+| Command | Purpose |
+|---------|---------|
+| `/security-scan` | Security audit (bandit, git-secrets, pip-audit) |
+| `/deploy [env]` | Deploy with safety checks |
+| `/test` | Test suite |
+| `/review [PR]` | Code review |
+| `/help` | Available commands |
+
+## Agents
+
+| Agent | Model | Purpose |
+|-------|-------|---------|
+| security-reviewer | sonnet | OWASP, secrets, CVEs |
+| deploy-agent | sonnet | Safe deployments |
+| code-reviewer | haiku | Bugs, logic errors |
+| code-architect | sonnet | Design features |
+
+## Skills
+
+- secret-scanner - Detect API keys
+- docker-manager - Container ops
+- git-workflow - Git practices
+- refactor-python - Python patterns
+- test-generation - Write tests
+
+## Rules
+
+See `.claude/rules/`:
+- project.md - General standards
+- python.md - Python specifics
+
+## Production Checklist
+
+- [ ] Security scan passes
+- [ ] Tests pass (80% coverage)
+- [ ] Staging verified
+- [ ] Canary deployment
+- [ ] 30min monitoring
+
+## Emergency
+
+Rollback:
+```bash
+/deploy rollback production
+# or
+kubectl rollout undo deployment/app
 ```
-
-## Best Practices
-
-1. **Separate concerns** - One agent per task
-2. **Parallel execution** - Spawn independent agents simultaneously  
-3. **Preload skills** - Give agents domain knowledge at startup
-4. **Memory persistence** - Let agents learn from past work
-5. **User gating** - Show summaries before destructive actions
-
-## Configuration
-
-Settings load in this order (later overrides earlier):
-1. `~/.claude/settings.json` - Global defaults
-2. `.claude/settings.json` - Project settings  
-3. `.claude/settings.local.json` - Personal overrides
 
 ## Sources
 
-- [Claude Code Docs](https://code.claude.com/docs)
-- [Best Practices Repository](https://github.com/tanviiiiir-r/claude-code-best-practice)
-
----
-
-*Backup created: 2026-04-22*
+- code.claude.com/docs
+- OWASP Top 10
+- SRE Book
