@@ -1,0 +1,30 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "pattern": "Agent",
+        "description": "Log agent spawning",
+        "command": "echo \"[$(date +%H:%M:%S)] Spawning: {{tool.args.subagent_type}}\" >> ~/.claude/logs/agent.log"
+      },
+      {
+        "pattern": "Write",
+        "description": "Track file writes",
+        "command": "echo \"[$(date +%H:%M:%S)] Writing: {{tool.args.file_path}}\" >> ~/.claude/logs/files.log"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "pattern": "Agent",
+        "description": "Log agent completion",
+        "command": "echo \"[$(date +%H:%M:%S)] Completed: {{tool.args.subagent_type}}\" >> ~/.claude/logs/agent.log"
+      }
+    ],
+    "PrePromptSend": [
+      {
+        "pattern": "/review",
+        "description": "Track code review triggers",
+        "command": "echo \"[$(date +%H:%M:%S)] Code review triggered\" >> ~/.claude/logs/commands.log"
+      }
+    ]
+  }
+}

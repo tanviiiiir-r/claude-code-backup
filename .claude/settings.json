@@ -1,0 +1,49 @@
+{
+  "permissions": {
+    "default": "acceptEdits",
+    "allow": [
+      "Bash",
+      "Read",
+      "Write",
+      "Edit",
+      "Agent",
+      "Skill",
+      "WebSearch",
+      "WebFetch",
+      "Glob",
+      "Grep"
+    ]
+  },
+  "model": "claude-sonnet-4-6",
+  "effort": "high",
+  "outputStyle": "concise",
+  "sandbox": {
+    "write": [
+      ".claude/**/*",
+      "**/*.md",
+      "**/*.json",
+      "**/*.yml",
+      "**/*.yaml"
+    ],
+    "read": [
+      "**/*"
+    ]
+  },
+  "hooks": {
+    "enabled": true,
+    "path": ".claude/hooks/hooks.json"
+  },
+  "statusLine": {
+    "enabled": true,
+    "format": "{model} | {cost} | {context}%"
+  },
+  "memory": {
+    "type": "user",
+    "path": ".claude/memory"
+  },
+  "agents": {
+    "defaultModel": "claude-haiku-4-5",
+    "maxConcurrent": 5,
+    "timeout": 300000
+  }
+}
