@@ -1,0 +1,26 @@
+{
+  "routing": {
+    "user_interaction": {
+      "model": "kimi-k2.6:cloud",
+      "reason": "Primary model for complex reasoning and user interaction"
+    },
+    "agents": {
+      "security-reviewer": {
+        "model": "qwen3-coder-next:cloud",
+        "reason": "Coding-specialized model for security analysis"
+      },
+      "code-reviewer": {
+        "model": "qwen3.5:cloud",
+        "reason": "General purpose for code review"
+      },
+      "deploy-agent": {
+        "model": "qwen3.5:cloud",
+        "reason": "General purpose for deployment decisions"
+      },
+      "code-architect": {
+        "model": "qwen3-coder-next:cloud",
+        "reason": "Coding-specialized for architecture design"
+      }
+    }
+  }
+}

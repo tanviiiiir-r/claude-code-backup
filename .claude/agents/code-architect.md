@@ -2,7 +2,8 @@
 name: code-architect
 description: Design feature architectures and implementation plans
 allowedTools: ["Read", "Grep", "Write", "Glob", "WebSearch"]
-model: sonnet
+model: anthropic
+anthropicModel: qwen3-coder-next:cloud
 color: blue
 maxTurns: 12
 permissionMode: askUser

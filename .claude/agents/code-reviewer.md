@@ -2,7 +2,8 @@
 name: code-reviewer
 description: Code review for bugs, anti-patterns, logic errors
 allowedTools: ["Read", "Grep", "Bash"]
-model: haiku
+model: anthropic
+anthropicModel: qwen3.5:cloud
 color: orange
 maxTurns: 10
 ---

@@ -2,7 +2,8 @@
 name: security-reviewer
 description: Security audit - OWASP Top 10, secrets, vulnerabilities
 allowedTools: ["Read", "Grep", "Bash"]
-model: sonnet
+model: anthropic
+anthropicModel: qwen3-coder-next:cloud
 color: red
 maxTurns: 10
 ---

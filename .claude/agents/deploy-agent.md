@@ -2,7 +2,8 @@
 name: deploy-agent
 description: Safe deployments with rollback capability
 allowedTools: ["Read", "Bash", "Write"]
-model: sonnet
+model: anthropic
+anthropicModel: qwen3.5:cloud
 color: green
 maxTurns: 15
 permissionMode: askUser
