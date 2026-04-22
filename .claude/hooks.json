@@ -1,0 +1,36 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "pattern": "Agent",
+        "command": "echo \"[$(date +%H:%M:%S)] Spawning agent: {{tool.args.subagent_type}}\" >> ~/.claude/logs/agent-spawn.log"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "pattern": "Agent",
+        "command": "echo \"[$(date +%H:%M:%S)] Agent completed: {{tool.args.subagent_type}}\" >> ~/.claude/logs/agent-spawn.log"
+      },
+      {
+        "pattern": "Write",
+        "command": "if [[ '{{tool.args.file_path}}' == *'agent'* ]]; then echo 'Agent file modified: {{tool.args.file_path}}' >> ~/.claude/logs/changes.log; fi"
+      }
+    ],
+    "PrePromptSend": [
+      {
+        "pattern": "/career",
+        "command": "echo 'Career command triggered at $(date)' >> ~/.claude/logs/commands.log"
+      },
+      {
+        "pattern": "/content",
+        "command": "echo 'Content command triggered at $(date)' >> ~/.claude/logs/commands.log"
+      }
+    ],
+    "PostPromptSend": [
+      {
+        "pattern": ".*",
+        "command": "if [ ! -d ~/.claude/logs ]; then mkdir -p ~/.claude/logs; fi"
+      }
+    ]
+  }
+}
