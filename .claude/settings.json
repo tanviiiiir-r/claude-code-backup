@@ -6,6 +6,6 @@
   "model": "claude-sonnet-4-6",
   "effort": "high",
   "outputStyle": "concise",
-  "hooks": { "enabled": true, "path": ".claude/hooks/hooks.json" },
-  "agents": { "defaultModel": "claude-haiku-4-5", "maxConcurrent": 5, "timeout": 300000 }
+  "agents": { "defaultModel": "claude-haiku-4-5", "maxConcurrent": 5, "timeout": 300000 },
+  "autoUpdate": true
 }
