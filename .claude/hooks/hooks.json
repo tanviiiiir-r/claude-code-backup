@@ -1,1 +1,55 @@
-{"hooks":{"PrePromptSend":[{"pattern":"^/loop","command":"echo 'Loop scheduled' >> ~/.claude/logs/schedule.log"}],"PostToolUse":[{"pattern":"Agent","command":"echo '[$(date +%H:%M)] Agent done' >> ~/.claude/logs/agents.log"},{"pattern":"Write","command":"echo '[$(date)] File written' >> ~/.claude/logs/files.log"}],"PreToolUse":[{"pattern":"Agent","command":"echo '[$(date +%H:%M)] Starting agent' >> ~/.claude/logs/agents.log"}]}}
+{
+  "version": 1,
+  "hooks": {
+    "beforeSubmitPrompt": [
+      {
+        "command": "~/.claude/cursor-hooks/session-init.sh"
+      },
+      {
+        "command": "~/.claude/cursor-hooks/context-inject.sh"
+      }
+    ],
+    "afterMCPExecution": [
+      {
+        "command": "~/.claude/cursor-hooks/save-observation.sh"
+      }
+    ],
+    "afterShellExecution": [
+      {
+        "command": "~/.claude/cursor-hooks/save-observation.sh"
+      }
+    ],
+    "afterFileEdit": [
+      {
+        "command": "~/.claude/cursor-hooks/save-file-edit.sh"
+      }
+    ],
+    "stop": [
+      {
+        "command": "~/.claude/cursor-hooks/session-summary.sh"
+      }
+    ],
+    "PrePromptSend": [
+      {
+        "pattern": "^/loop",
+        "command": "echo 'Loop scheduled' >> ~/.claude/logs/schedule.log"
+      }
+    ],
+    "PostToolUse": [
+      {
+        "pattern": "Agent",
+        "command": "echo '[$(date +%H:%M)] Agent done' >> ~/.claude/logs/agents.log"
+      },
+      {
+        "pattern": "Write",
+        "command": "echo '[$(date)] File written' >> ~/.claude/logs/files.log"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "pattern": "Agent",
+        "command": "echo '[$(date +%H:%M)] Starting agent' >> ~/.claude/logs/agents.log"
+      }
+    ]
+  }
+}
